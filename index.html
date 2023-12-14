@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./script/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Your task list</h1>
+        
+        <!-- <div id="btAddList">
+            <h2>Add new list</h2>
+            <img src="./imgs/icon-plus.png" alt="plus icon">
+        </div> -->
+    </header>
+
+    <section>
+        <!--cor botao #DEDEDE 
+        https://icons8.com/icons/set/plus-->
+        <div id="cardToDo">
+            <h3>TO DO</h3>
+
+            <div class="areaTasksToDo">
+                <input type="text" class="inputTask" id="taskInseridaToDo" placeholder="Adicione uma tarefa">
+            </div>
+
+            <button class="btAddCardToDo">
+                <img src="./imgs/icon-plus.png" alt="plus icon">
+            </button>
+        </div>
+
+
+        <div id="cardInProg">
+            <h3>IN PROGRESS</h3>
+
+            <div class="areaTasksInProg">
+                <input type="text" class="inputTask" id="taskInseridaInProg" placeholder="Adicione uma tarefa">
+            </div>
+
+            <button class="btAddCardInProg">
+                <img src="./imgs/icon-plus.png" alt="plus icon">
+            </button>
+        </div>
+
+        <div id="cardDone">
+            <h3>DONE</h3>
+
+            <div class="areaTasksDone">
+                <div class="taskInseridaDone">
+                    <input type="text" class="inputTask" id="taskInseridaDone" placeholder="Adicione uma tarefa">
+                </div>
+            </div>
+
+            <button class="btAddCardDone">
+                <img src="./imgs/icon-plus.png" alt="plus icon">
+            </button>
+        </div>
+
+    </section>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
