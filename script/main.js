@@ -6,10 +6,14 @@ let listaTarefas = document.querySelector("#listaTarefas");
 
 
 let janelaEdicao = document.querySelector("#janelaEdicao");
-let janelaEdicaoFundo = document.querySelector("#janelaEdicaoFundo")
-let janelaEdicaoBtnFechar = document.querySelector("#janelaEdicaoBtnFechar")
+let janelaEdicaoFundo = document.querySelector("#janelaEdicaoFundo");
+let janelaEdicaoBtnFechar = document.querySelector("#janelaEdicaoBtnFechar");
 
-let btnAtualizarTarefa = document.querySelector("#btnAtualizarTarefa")
+
+let btnAtualizarTarefa = document.querySelector("#btnAtualizarTarefa");
+let idTarefaEdicao = document.querySelector("#idTarefaEdicao");
+let inputTarefaNomeEdicao = document.querySelector("#inputTarefaNomeEdicao");
+
 
 
 function adicionarTarefa(tarefa) {
@@ -63,6 +67,7 @@ function editar(idTarefa) {
 
     if(li) {
         idTarefaEdicao.innerHTML = '#' + idTarefa;
+
         inputTarefaNomeEdicao.value = li.innerText;
         alternarJanelaEdicao();
         
@@ -131,12 +136,14 @@ btnAtualizarTarefa.addEventListener('click', (e) => {
     let tarefa = {
         nome: inputTarefaNomeEdicao.value,
         id: idTarefa
-    }
+    };
 
     let tarefaAtual = document.getElementById(''+idTarefa+'');
 
     if(tarefaAtual) {
-        let li = criarTagLI(tarefa);
+        let li = criarTagLi(tarefa);
+
+        // trocar a tarefa atual pela li nova
         listaTarefas.replaceChild(li, tarefaAtual);
         alternarJanelaEdicao();
     } else {
