@@ -1,75 +1,145 @@
-let btAddCardToDo = document.querySelector(".btAddCardToDo");
-let areaTasksToDo = document.querySelector(".areaTasksToDo");
+let inputNovaTarefa = document.querySelector("#inputNovaTarefa");
 
-let btAddCardInProg = document.querySelector(".btAddCardInProg");
-let areaTasksInProg = document.querySelector(".areaTasksInProg");
+let btnAddTarefa = document.querySelector("#btnAddTarefa");
 
-let btAddCardDone = document.querySelector(".btAddCardDone");
-let areaTasksDone = document.querySelector(".areaTasksDone");
+let listaTarefas = document.querySelector("#listaTarefas");
 
 
-let btAddCard = document.querySelectorAll(".btAddCard");
+let janelaEdicao = document.querySelector("#janelaEdicao");
+let janelaEdicaoFundo = document.querySelector("#janelaEdicaoFundo")
+let janelaEdicaoBtnFechar = document.querySelector("#janelaEdicaoBtnFechar")
+
+let btnAtualizarTarefa = document.querySelector("#btnAtualizarTarefa")
 
 
+function adicionarTarefa(tarefa) {
+    let li = criarTagLi(tarefa);
+
+    listaTarefas.appendChild(li);
+
+    inputNovaTarefa.value = "";
+}
 
 
-function createTaskContainer(inputValue, areaDasTasks) {
-    if (inputValue.trim() !== '') {
-        let taskContainer = document.createElement('div');
-        taskContainer.setAttribute('class', 'task-container');
+function gerarId(){
+    return Math.floor(Math.random() * 3000);
+}
 
-        let task = document.createElement('input');
-        task.setAttribute('type', 'text');
-        task.setAttribute('class', 'inputTask');
-        task.setAttribute('value', inputValue);
 
-        taskContainer.appendChild(task);
+function criarTagLi(tarefa) {
 
-        let deleteButton = document.createElement('button');
-        deleteButton.setAttribute('class', 'btDelete');
+    let li = document.createElement("li");
+    // vincular o elemento li ao id da tarefa
+    li.id = tarefa.id;
 
-        let deleteIcon = document.createElement('img');
-        deleteIcon.setAttribute('src', './imgs/icon-x.png');
-        deleteIcon.setAttribute('alt', 'Delete icon');
+    let span = document.createElement("span");
+    span.classList.add("textoTarefa");
+    span.innerHTML = tarefa.nome;
 
-        deleteButton.appendChild(deleteIcon);
+    let div = document.createElement("div");
 
-        deleteButton.addEventListener('click', function () {
-            taskContainer.remove();
-        });
+    let btnEditar = document.createElement("button");
+    btnEditar.classList.add('btnAcao');
+    btnEditar.innerHTML = `<i class="fa fa-edit"></i>`;
+    btnEditar.setAttribute('onclick', 'editar('+tarefa.id+')');
 
-        taskContainer.appendChild(deleteButton);
+    let btnExcluir = document.createElement("button");
+    btnExcluir.classList.add('btnAcao');
+    btnExcluir.innerHTML = `<i class="fa fa-trash"></i>`;
+    btnExcluir.setAttribute('onclick', 'excluir('+tarefa.id+')');
 
-        areaDasTasks.appendChild(taskContainer);
+
+    div.appendChild(btnEditar);
+    div.appendChild(btnExcluir);
+
+    li.appendChild(span);
+    li.appendChild(div);
+    return li;
+}
+
+
+function editar(idTarefa) {
+    let li = document.getElementById(''+ idTarefa + '');
+
+    if(li) {
+        idTarefaEdicao.innerHTML = '#' + idTarefa;
+        inputTarefaNomeEdicao.value = li.innerText;
+        alternarJanelaEdicao();
+        
     } else {
-        alert('Por favor, insira uma tarefa válida!');
+        alert('Elemento HTML não encontrado!');
+    }
+}
+
+function excluir( idTarefa ){
+
+    let confirmacao = window.confirm("Tem certeza que deseja excluir? ")
+
+    if(confirmacao) {
+        let li = document.getElementById(''+idTarefa+'');
+        
+        if(li) {
+            listaTarefas.removeChild(li);
+        }
     }
 }
 
 
-
-function addTaskOnClick(button, inputField, areaDasTasks) {
-    button.addEventListener("click", function() {
-        let valorInput = inputField.value;
-        createTaskContainer(valorInput, areaDasTasks);
-        inputField.value = '';
-    });
+function alternarJanelaEdicao() {
+    janelaEdicao.classList.toggle('abrir');
+    janelaEdicaoFundo.classList.toggle('abrir');
 }
 
 
-btAddCard.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-        let parentDiv = this.parentNode;
-        let inputTask = document.createElement('input');
-        inputTask.setAttribute('type', 'text');
-        inputTask.setAttribute('class', 'inputTask');
-        inputTask.setAttribute('placeholder', 'Adicione uma tarefa');
-        parentDiv.querySelector('.areaTasks').appendChild(inputTask);
-    });
+
+
+// https://www.toptal.com/developers/keycode    -  para saber o key code da tecla
+
+inputNovaTarefa.addEventListener("keypress", (e) => {
+    // 13 key code do enter
+    if( e.keyCode == 13) {
+        let tarefa = {
+            nome: inputNovaTarefa.value,
+            id: gerarId()
+        };
+        adicionarTarefa(tarefa);
+    };
 });
 
 
 
-addTaskOnClick(btAddCardToDo, document.querySelector("#taskInseridaToDo"), areaTasksToDo);
-addTaskOnClick(btAddCardInProg, document.querySelector("#taskInseridaInProg"), areaTasksInProg);
-addTaskOnClick(btAddCardDone, document.querySelector("#taskInseridaDone"), areaTasksDone);
+
+btnAddTarefa.addEventListener("click", (e) => {
+    let tarefa = {
+        nome: inputNovaTarefa.value,
+        id: gerarId()
+    };
+    adicionarTarefa(tarefa);
+});
+
+
+janelaEdicaoBtnFechar.addEventListener("click", (e) => {
+    alternarJanelaEdicao();
+})
+
+
+btnAtualizarTarefa.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let idTarefa = idTarefaEdicao.innerHTML.replace('#', '');
+
+    let tarefa = {
+        nome: inputTarefaNomeEdicao.value,
+        id: idTarefa
+    }
+
+    let tarefaAtual = document.getElementById(''+idTarefa+'');
+
+    if(tarefaAtual) {
+        let li = criarTagLI(tarefa);
+        listaTarefas.replaceChild(li, tarefaAtual);
+        alternarJanelaEdicao();
+    } else {
+        alert('Elemento HTML não encontrado!');
+    } 
+});
