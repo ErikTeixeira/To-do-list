@@ -1,0 +1,16 @@
+.listaTarefas {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.listaTarefas li {
+    padding: 2%;
+    background: var(--color-eerie-black);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}

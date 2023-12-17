@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    gap: 20px;
+    max-width: 90vw;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.column {
+    background: var(--color-charleston-green);
+    padding: 1rem;
+    border-radius: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloColunas{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+
+.toDo,
+.review,
+.done{
+    max-width: 29%;
+}

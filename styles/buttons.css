@@ -1,0 +1,15 @@
+.btnAcao {
+    border-radius: 20px;
+    border: 1px solid var(--color-eerie-black);
+    width: 27px;
+    height: 27px;
+    margin: 5px 5px 5px 0;
+    cursor: pointer;
+    background: var(--color-charleston-green);
+    color: var(--color-white);
+    outline: none;
+}
+
+.btnAcao:hover {
+    background: var(--color-black-olive);
+}

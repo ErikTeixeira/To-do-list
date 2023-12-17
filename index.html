@@ -15,18 +15,45 @@
 </head>
 <body>
 
-    <div class="conteudo">
-        <div class="topo">
-            <input type="text" id="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+    <header>
+        <h1>Kanban</h1>
+    </header>
 
-            <button id="btnAddTarefa">
-                <i class="fa fa-plus"></i>
-            </button>
+    <div class="container">
+
+        <div class="column toDo">
+            <h2 class="tituloColunas">TO DO</h2>
+            <div class="topo">
+                <input type="text" class="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                <button class="btnAddTarefa">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <ul class="listaTarefas"></ul>
         </div>
 
-        <ul id="listaTarefas">
+        <div class="column review">
+            <h2 class="tituloColunas">REVIEW</h2>
+            <div class="topo">
+                <input type="text" class="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                <button class="btnAddTarefa">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <ul class="listaTarefas"></ul>
+        </div>
 
-        </ul>
+        <div class="column done">
+            <h2 class="tituloColunas">DONE</h2>
+            <div class="topo">
+                <input type="text" class="inputNovaTarefa" placeholder="Adicione uma nova tarefa">
+                <button class="btnAddTarefa">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <ul class="listaTarefas"></ul>
+        </div>
+
     </div>
 
     <div id="janelaEdicao">
@@ -41,12 +68,12 @@
 
         <form>
             <div class="frm-linha">
-                <label for="nome">Nome</label>
+                <label for="nome">Name</label>
                 <input type="text" id="inputTarefaNomeEdicao">
             </div>
             
             <div class="frm-linha">
-                <button id="btnAtualizarTarefa">Salvar</button>
+                <button id="btnAtualizarTarefa">Save</button>
             </div>
         </form>
     </div>
