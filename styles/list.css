@@ -14,3 +14,9 @@
     align-items: center;
     margin-top: 15px;
 }
+
+
+.listaTarefas .liEmBranco{
+    background: var(--color-charleston-green);
+    height: 10px;
+}

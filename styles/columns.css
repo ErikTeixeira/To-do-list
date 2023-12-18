@@ -1,17 +1,18 @@
 .container {
     display: flex;
     gap: 20px;
-    max-width: 90vw;
+    max-width: 100vw;
     box-sizing: border-box;
-    margin: auto;
+    margin: 5px;
+    margin: 0 2%;
 }
 
 .column {
     background: var(--color-charleston-green);
     padding: 1rem;
+    margin-bottom: 16px;
     border-radius: 12px;
     flex: 1;
-    display: flex;
     flex-direction: column;
 }
 
@@ -23,7 +24,8 @@
 
 
 .toDo,
+.InProg,
 .review,
 .done{
-    max-width: 29%;
+    max-width: 20vw;
 }

@@ -12,6 +12,9 @@ let idTarefaEdicao = document.querySelector("#idTarefaEdicao");
 let inputTarefaNomeEdicao = document.querySelector("#inputTarefaNomeEdicao");
 
 
+const liTarefa = document.querySelectorAll(".liTarefa");
+
+let contadorIds = 1;
 
 function adicionarTarefa(tarefa, lista, input) {
     let li = criarTagLi(tarefa);
@@ -21,13 +24,16 @@ function adicionarTarefa(tarefa, lista, input) {
 
 
 function gerarId() {
-    return Math.floor(Math.random() * 3000);
+    return contadorIds++;
 }
 
 
 function criarTagLi(tarefa) {
     let li = document.createElement("li");
     li.id = tarefa.id;
+    li.setAttribute("draggable", true);
+    li.classList.add("liTarefa");
+
 
     // Criação de elementos para a tarefa
     let span = document.createElement("span");
@@ -67,7 +73,7 @@ function editar(idTarefa) {
 
     if(li) {
         // Colocar o titulo do retangulo de editar sendo o id
-        idTarefaEdicao.innerHTML = '#' + idTarefa;
+        // idTarefaEdicao.innerHTML = '#' + idTarefa;
 
         inputTarefaNomeEdicao.value = li.querySelector('.textoTarefa').innerHTML;
 
@@ -105,9 +111,46 @@ function alternarJanelaEdicao() {
 
 
 
+// Drag and Drop
+let elementoArrastado = null;
+
+function iniciarArraste(e) {
+    elementoArrastado = e.target;
+    elementoArrastado.classList.add('arrastando');
+}
+
+function finalizarArraste() {
+    elementoArrastado.classList.remove('arrastando');
+}
+
+function permitirArraste(e) {
+    e.preventDefault();
+}
+
+function entrarLista(e) {
+    e.preventDefault();
+    let liExemploArrastar = this.querySelector('.liExemploArrastar');
+
+    if (liExemploArrastar) {
+        liExemploArrastar.style.display = 'none';
+    }
+}
+
+function sairLista(e) {
+    e.preventDefault();
+    verificarListaVazia(this);
+}
+
+function soltarNaLista() {
+    this.appendChild(elementoArrastado);
+    elementoArrastado = null;
+}
+
+
 
 inputNovaTarefa.forEach(function(input, index) {
     input.addEventListener("keypress", function(e) {
+        // key code do enter para enviar a terefa
         if( e.keyCode == 13) {
             let tarefa = {
                 nome: input.value,
@@ -157,4 +200,18 @@ btnAtualizarTarefa.addEventListener('click', (e) => {
     } else {
         alert('Elemento HTML não encontrado!');
     } 
+});
+
+
+
+
+
+document.addEventListener('dragstart', iniciarArraste);
+document.addEventListener('dragend', finalizarArraste);
+
+listaTarefas.forEach(function(lista) {
+    lista.addEventListener('dragover', permitirArraste);
+    lista.addEventListener('dragenter', entrarLista);
+    lista.addEventListener('dragleave', sairLista);
+    lista.addEventListener('drop', soltarNaLista);
 });
