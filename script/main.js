@@ -73,7 +73,7 @@ function editar(idTarefa) {
 
     if(li) {
         // Colocar o titulo do retangulo de editar sendo o id
-        // idTarefaEdicao.innerHTML = '#' + idTarefa;
+        idTarefaEdicao.innerHTML = '#' + idTarefa;
 
         inputTarefaNomeEdicao.value = li.querySelector('.textoTarefa').innerHTML;
 
@@ -148,10 +148,19 @@ function soltarNaLista() {
 
 
 
+
 inputNovaTarefa.forEach(function(input, index) {
+    let btnAddTarefaAtual = btnAddTarefa[index]; // Botão correspondente ao índice atual
+
+    if (input.value.trim() === "") {
+        btnAddTarefaAtual.disabled = true; // Desabilita o botão se o campo estiver vazio
+    } else {
+        btnAddTarefaAtual.disabled = false; // Habilita o botão se o campo tiver conteúdo
+    }
+
     input.addEventListener("keypress", function(e) {
-        // key code do enter para enviar a terefa
-        if( e.keyCode == 13) {
+        // key code do enter para enviar a tarefa
+        if (e.keyCode == 13) {
             let tarefa = {
                 nome: input.value,
                 id: gerarId()
