@@ -1,0 +1,45 @@
+.topo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    max-width: 100%;
+}
+ 
+.column input.inputNovaTarefa {
+    flex: 1;
+    padding: 1.1em;
+    border-radius: 12px;
+    margin-right: 0.7em;
+    width: calc(80% - 0.7em);
+    border: 1px solid var(--color-eerie-black);
+    outline: none;
+    font-size: 0.8em;
+    background: var(--color-eerie-black);
+    color: var(--color-white);
+}
+
+
+ .topo button {
+    width: calc(20% - 0.7em);
+    height: 2.7em;
+    border-radius: 12px;
+    border: 1px solid var(--color-eerie-black);
+    background: var(--color-eerie-black);
+    color: var(--color-white);
+    outline: none;
+ }
+ 
+ .topo button:hover {
+     background: var(--color-eerie-black2);
+     cursor: pointer;
+ }
+
+
+ .textoTarefa {
+    max-width: 34%;
+    overflow: hidden;
+    word-wrap: break-word;
+    margin-left: 8px;
+}

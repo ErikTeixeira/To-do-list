@@ -1,0 +1,38 @@
+@import url("./buttons.css");
+@import url("./columns.css");
+@import url("./form.css");
+@import url("./header.css");
+@import url("./inputTask.css");
+@import url("./list.css");
+@import url("./windowEdit.css");
+
+
+
+body {
+    background: var(--color-background);
+    color: var(--color-white);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+:root {
+    --color-background: #c1b7b7;
+    --color-eerie-black: #191818;
+    --color-white: #ffffff;
+    --color-charleston-green: #3f3f3f;
+    --color-black-olive: #363636;
+    --color-pine-tree: #5e5e5e;
+    --color-chinese-silver: #cccccc;
+    --color-eerie-black2: #252323;  
+}
+
+
+/* --color-eerie-black: #191818;
+--color-white: #ffffff;
+--color-charleston-green: #2b2a2a;
+--color-black-olive: #3c3a3a;
+--color-pine-tree: #2d2c2c;
+--color-chinese-silver: #cccccc;
+--color-eerie-black2: #1f1e1e; */
