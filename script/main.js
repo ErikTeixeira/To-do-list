@@ -14,7 +14,10 @@ let inputTarefaNomeEdicao = document.querySelector("#inputTarefaNomeEdicao");
 
 const liTarefa = document.querySelectorAll(".liTarefa");
 
+let aviso = document.querySelector(".aviso");
+
 let contadorIds = 1;
+
 
 function adicionarTarefa(tarefa, lista, input) {
     let li = criarTagLi(tarefa);
@@ -110,6 +113,22 @@ function alternarJanelaEdicao() {
 }
 
 
+function adicionarTarefaSeValido(input, lista) {
+    let valorInput = input.value.trim();
+    if (valorInput !== "") { // Verifica se o valor do input não está vazio
+        let tarefa = {
+            nome: valorInput,
+            id: gerarId()
+        };
+        
+        adicionarTarefa(tarefa, lista, input);
+        aviso.innerHTML = ``;
+    } else {
+        aviso.innerHTML = `Please, add a valid task`;
+    }
+}
+
+
 
 // Drag and Drop
 let elementoArrastado = null;
@@ -152,21 +171,18 @@ function soltarNaLista() {
 inputNovaTarefa.forEach(function(input, index) {
     let btnAddTarefaAtual = btnAddTarefa[index]; // Botão correspondente ao índice atual
 
-    if (input.value.trim() === "") {
-        btnAddTarefaAtual.disabled = true; // Desabilita o botão se o campo estiver vazio
-    } else {
-        btnAddTarefaAtual.disabled = false; // Habilita o botão se o campo tiver conteúdo
-    }
+    input.addEventListener("input", function() {
+        if (input.value.trim() === "") {
+            btnAddTarefaAtual.disabled = true; // Desabilita o botão se o campo estiver vazio
+        } else {
+            btnAddTarefaAtual.disabled = false; // Habilita o botão se o campo tiver conteúdo
+        }
+    });
 
     input.addEventListener("keypress", function(e) {
-        // key code do enter para enviar a tarefa
-        if (e.keyCode == 13) {
-            let tarefa = {
-                nome: input.value,
-                id: gerarId()
-            };
-            adicionarTarefa(tarefa, listaTarefas[index], input);
-        };
+        if (e.key === "Enter") {
+            adicionarTarefaSeValido(input, listaTarefas[index]);
+        }
     });
 });
 
@@ -174,11 +190,7 @@ inputNovaTarefa.forEach(function(input, index) {
 
 btnAddTarefa.forEach(function(btn, index) {
     btn.addEventListener("click", function(e) {
-        let tarefa = {
-            nome: inputNovaTarefa[index].value,
-            id: gerarId()
-        };
-        adicionarTarefa(tarefa, listaTarefas[index], inputNovaTarefa[index]);
+        adicionarTarefaSeValido(inputNovaTarefa[index], listaTarefas[index]);
     });
 });
 

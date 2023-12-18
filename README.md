@@ -1,1 +1,25 @@
-# To-do-list
+# Kanban Task Management
+
+This project is a task management interface resembling a Kanban board. It consists of four columns where tasks can be added, moved between columns using drag and drop, and edited. It uses HTML, CSS, and JavaScript to create this interactive task management system.
+
+
+## About the Project
+This Kanban project, created with HTML, CSS, and JavaScript, was developed as part of my study journey in JavaScript. It allows users to input tasks that are to be done, those in progress, items needing review, and completed tasks. Within this project, you can drag and drop tasks across columns and edit the inserted tasks as needed.
+
+
+## Features
+- Task Management: Organize tasks into different stages – to-do, in progress, to review, and completed.
+- Drag and Drop Functionality: Easily move tasks between columns using drag  and drop actions.
+- Task Editing: You can edit the tasks.
+
+
+## Purpose
+The primary aim of this project was to solidify my understanding of JavaScript by implementing a Kanban-like task management interface. It serves as a practical exercise allowing the addition, movement, and modification of tasks within different stages of completion.
+
+
+
+### Project Images
+
+![Preview 1](https://lh3.googleusercontent.com/pw/ABLVV85uLWCOVvWCEGOl4pqZ67qwELsk5Y3Qjp1pq2e4rvv3Yl5QbQih7oNqkyuIZ_vnTUiH0QbyJ5pBOTJKSLAKgt80kVKpbDv22zPqemN4_8atqIN7QNX5KEu6qs8m2Tyeej0Adimt2Y05XLw2vfwbsiEZg8Zii01aFeGESNj8J6vglPcmzwpxOM4s6NkYhfNeFnWW-OzZELi2gKN7sLv2DDU88QLh34O4kICx0sAkmdcFiOJhEkchMoRxUeFZCk3mVbTKfpq83Qcz1dfVOm1_gz28h6bDK_9RHKcwd_B06Czimbht9LQ_uJRt1OPwMARBaI7PF29CdxcqXLbRol6W6mn08OX9GyH-rLjC3nCftM9x_m4Jgwyq5CnffH8iH-7ElRj3_3Xgi9Nf1x2TkxJ-ESefprcHT6zWavH2sl3qpiKH8y1Z8KdAZOEC-bnQnfseJVKN-Ot2Edk0UCctyYdLOvWkLEo7P0E5E0Xj7UxcTt7iZ7oQXM5NfSSrPUado0K7iL5ZbsaPnAU-uD982X5KDeJIRQHNhkQOL5FXo-onF3ryJoUafME4bqqLx4sj9NNdXMmQ1Gbe25R7l3AHLfQFxEowTatRucsIbTOOtHhzbmPQZ6aj26KHtvWo-FdWSkiCv81-X5MFElXGQ3MnG310Jk15FR427l5WQhlQHGSeXNSF1odj_Kbxx09S9cafB69tTyRgLY4Y85UrB2cG8d5W5BiM7D4DranzHesNutlRX-tJk1rAR3SUTYSnAuEJNJJNXgCTXchB02K8NDuwr5KMVNTOXRDAz0IgDVFHkRCy62wrbKojSn9iB3yqvnL6G4ooC26o7mBu7hMaZ3JuS5I-d0dYW3WVYo50yRIlzxbIjMwYec3mh5bGxcTeBUpk17jwv6b3YNEzcLD2fqSjwxo4Kmh2dH-6hBHPceMgYun5isn_hYLuEiVEUa8wvFEVOQ40hfqDh32DfAo=w1303-h613-s-no-gm?authuser=0){width=50%}
+
+![Preview 2](https://lh3.googleusercontent.com/pw/ABLVV86U5HhicKH81KWUHRt576fet9_MPiwgsNX8viBH5fIxLMSkKR6H9v_dIypX3UmDRe83-9DuQUrbVBXXUBsZ00731Wh9D-v4rGdL8_dJHFs3f4nteRRTIMej70B5s_ZkrdNiV6dizMSwDgdMGRMNkWsAoDZ3h0OOZvonyOoSB0GNqVVgCyUenBTFWXSbWg1XXOzN3JoqjdSWCN-HvB_Wyw7j_RFamiFjCwZPI7RRPKkllMaM31YUXs_7amr6wGUsCu976Oz7KEaDAUpXvTM_8eutx03rWIqWYRPO_8Afcu6qY9p61UGWw1C5uhQcK5UWLFXWSwL6AAyZpdkLJAXuEL4TVniZg62b_mMYdP1iBG_uOeucAqCHSEOIfp8Hxj_IUjvuFrWnFvbAzD8vHPZTDtWs09BHMIEJnl8dhRQ-wSwHOPq8nxy11OZaHa5dh4PJVAytgeM7xBKn4LR4sEXOz80wK3M1sStqGr98yiGjmyMdFehKhS4hHb7m7WbKKa25IHoqAh6yzHpBhl4nIwsgiUEag1DxtUMnXHcYS-OinKgePY9CU8qWVSDGjV09wA1ftgBsU1P0V_ytF1lhCE4GagR-YgCPiPXfp6nAhIUKnmffKpoX6vnY6M1twJDguQNpaDvDjL9MJq5U9q7-AX3m5583jVxReMHIA2JtKNlBBYqD4z1w8-dKDAvsaGwkvkArf5VURBYGuy7ZWK1vQqeKrHR7hRQicLxyIwFeNiN9BmcdTP5_qb4ZU6_LnRiXk956DlxhFshpOK8vU1cV-HFC-w1F7P9k2EEk3-nPL5_xXMhClBM4vNzXCDWPTwSh9psbs54v0MTQkWM-K4khdlbQitA7a5toinBZrtlShuEBJ7Ip5cB1zi3zRxiMw4wzvdtsAp2_Bd3Opebfj0fiUhjOTNw30cHfNK8p3x7bOjgyIC6TbGpM9FFrmIpmkJrKEYtT7flfvQtmoNI=w1304-h611-s-no-gm?authuser=0){width=50%}

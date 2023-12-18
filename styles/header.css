@@ -1,5 +1,16 @@
 header{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+h1{
+    margin: 1em 0 0 0;
+    font-weight: 700;
+}
+
+.aviso{
+    color: var(--color-charleston-green);
+    font-weight: 700;
 }
