@@ -36,3 +36,46 @@ body {
 --color-pine-tree: #2d2c2c;
 --color-chinese-silver: #cccccc;
 --color-eerie-black2: #1f1e1e; */
+
+
+/* Estilos para Tablets */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        max-width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .toDo,
+    .InProg,
+    .review,
+    .done {
+        max-width: 70%;
+        min-width: 70%;
+    }
+}
+
+/* Estilos para Smartphones */
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        max-width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .toDo,
+    .InProg,
+    .review,
+    .done {
+        max-width: 85%;
+        min-width: 85%;
+    }
+}
