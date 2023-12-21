@@ -10,6 +10,22 @@ h1{
     font-weight: 700;
 }
 
+.divHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+}
+
+.linkGitHub{
+    margin-left: 5px;
+}
+
+.gitHubIcon{
+    width: 30px;
+    height: 30px;
+}
+
 .aviso{
     color: var(--color-charleston-green);
     font-weight: 700;
